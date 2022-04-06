@@ -1,17 +1,17 @@
 package pt.nfriacowboy.services
+
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import com.natpryce.konfig.Key
 import com.natpryce.konfig.stringType
 import pt.nfriacowboy.utils.IEnvironment
 
-class DemoServerService(_environment:IEnvironment) {
-    private var environment = _environment
+class DemoServerService(_environment: IEnvironment) {
+    private val environment = _environment
     private val server = Key("server.url", stringType)
 
 
-
-    fun demoCall():String {
+    fun demoCall(): String {
         val (request, response, result) = environment.config[server]
             .httpGet()
             .responseString()

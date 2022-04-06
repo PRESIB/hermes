@@ -17,6 +17,8 @@ dependencies {
     implementation("com.github.kittinunf.fuel:fuel:2.3.1")
     implementation("com.natpryce:konfig:1.6.10.0")
     implementation("ch.qos.logback:logback-classic:1.2.11")
+    implementation("org.eclipse.paho:org.eclipse.paho.mqttv5.client:1.2.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
     testImplementation(kotlin("test-junit"))
 }
 
@@ -42,9 +44,9 @@ tasks.jar {
 }
 
 
-tasks.register<Copy>("copyToNets"){
+tasks.register<Copy>("copyToNets") {
     println("Start copy files to net folder")
-    from( layout.buildDirectory.dir(buildDir.toString()+"/classes/kotlin/main"))
+    from(layout.buildDirectory.dir(buildDir.toString() + "/classes/kotlin/main"))
     into(layout.buildDirectory.dir("/home/parallels/nets/"))
     println("copy done")
 }

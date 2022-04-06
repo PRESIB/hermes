@@ -20,7 +20,7 @@ class NetLogger {
         }
     }
 
-    fun getLogger(name: String):Logger = NetLogger.getLogger(name)
+    fun getLogger(name: String): Logger = NetLogger.getLogger(name)
 
 
 }
