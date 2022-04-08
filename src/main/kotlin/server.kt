@@ -16,9 +16,7 @@ fun main() {
     mqttClient.connect()
     mqttClient.sendMessage("esp32/output", "on")
     mqttClient.sendMessage("esp32/output", "off")
-    mqttClient.subscrive( "esp32/temperature", ::sayHi)
-    mqttClient.subscrive( "esp32/humidity", ::sayHi1)
-    mqttClient.subscrive( "esp32/humidity", ::sayHi2)
+    mqttClient.subscrive( "esp32/motion", ::sayHi2)
 
     //while (true) { }
 }
