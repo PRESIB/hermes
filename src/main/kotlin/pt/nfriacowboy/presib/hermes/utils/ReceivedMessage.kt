@@ -1,4 +1,4 @@
-package pt.nfriacowboy.utils
+package pt.nfriacowboy.presib.hermes.utils
 
 import org.eclipse.paho.mqttv5.common.MqttMessage
 

@@ -1,4 +1,4 @@
-package pt.nfriacowboy.services
+package pt.nfriacowboy.presib.hermes.services
 
 import com.natpryce.konfig.Key
 import com.natpryce.konfig.intType
@@ -12,8 +12,8 @@ import org.eclipse.paho.mqttv5.common.MqttException
 import org.eclipse.paho.mqttv5.common.MqttMessage
 import org.eclipse.paho.mqttv5.common.MqttSubscription
 import org.slf4j.Logger
-import pt.nfriacowboy.logger.NetLogger
-import pt.nfriacowboy.utils.IEnvironment
+import pt.nfriacowboy.presib.hermes.logger.NetLogger
+import pt.nfriacowboy.presib.hermes.utils.IEnvironment
 
 
 class MQTTService(_environment: IEnvironment, netID: String, receiver: MqttCallback) {

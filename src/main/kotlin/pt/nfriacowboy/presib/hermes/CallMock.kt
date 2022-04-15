@@ -1,9 +1,8 @@
-package pt.nfriacowboy
+package pt.nfriacowboy.presib.hermes
 
-import pt.nfriacowboy.logger.NetLogger
-import pt.nfriacowboy.services.DemoServerService
-import pt.nfriacowboy.services.MQTTService
-import pt.nfriacowboy.utils.SystemEnvironment
+import pt.nfriacowboy.presib.hermes.logger.NetLogger
+import pt.nfriacowboy.presib.hermes.services.DemoServerService
+import pt.nfriacowboy.presib.hermes.utils.SystemEnvironment
 
 class CallMock {
 

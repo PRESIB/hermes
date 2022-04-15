@@ -1,4 +1,4 @@
-package pt.nfriacowboy.utils
+package pt.nfriacowboy.presib.hermes.utils
 
 import org.eclipse.paho.mqttv5.client.IMqttToken
 import org.eclipse.paho.mqttv5.client.MqttCallback
@@ -6,7 +6,7 @@ import org.eclipse.paho.mqttv5.client.MqttDisconnectResponse
 import org.eclipse.paho.mqttv5.common.MqttException
 import org.eclipse.paho.mqttv5.common.MqttMessage
 import org.eclipse.paho.mqttv5.common.packet.MqttProperties
-import pt.nfriacowboy.logger.NetLogger
+import pt.nfriacowboy.presib.hermes.logger.NetLogger
 import java.lang.*
 import java.util.*
 import kotlin.properties.Delegates

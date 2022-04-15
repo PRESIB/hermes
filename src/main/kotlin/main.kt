@@ -1,5 +1,5 @@
-import pt.nfriacowboy.CallMock
-import pt.nfriacowboy.logger.NetLogger
+import pt.nfriacowboy.presib.hermes.CallMock
+import pt.nfriacowboy.presib.hermes.logger.NetLogger
 
 
 private val logger = NetLogger.getLogger("main")

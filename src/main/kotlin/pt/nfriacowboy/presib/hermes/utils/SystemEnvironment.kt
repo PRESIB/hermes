@@ -1,4 +1,4 @@
-package pt.nfriacowboy.utils
+package pt.nfriacowboy.presib.hermes.utils
 
 import com.natpryce.konfig.ConfigurationProperties
 import com.natpryce.konfig.ConfigurationProperties.Companion.systemProperties

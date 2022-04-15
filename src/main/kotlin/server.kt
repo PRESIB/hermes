@@ -1,7 +1,6 @@
 import org.slf4j.Logger
-import pt.nfriacowboy.CallMock
-import pt.nfriacowboy.MqttClient
-import pt.nfriacowboy.logger.NetLogger
+import pt.nfriacowboy.presib.hermes.MqttClient
+import pt.nfriacowboy.presib.hermes.logger.NetLogger
 import sun.misc.Signal
 import kotlin.system.exitProcess
 
@@ -16,7 +15,7 @@ fun main() {
     mqttClient.connect()
     mqttClient.sendMessage("esp32/output", "on")
     mqttClient.sendMessage("esp32/output", "off")
-    mqttClient.subscrive( "esp32/motion", ::sayHi2)
+    //mqttClient.subscribe( "esp32/motion", ::sayHi2)
 
     //while (true) { }
 }

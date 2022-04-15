@@ -1,4 +1,4 @@
-package pt.nfriacowboy.logger
+package pt.nfriacowboy.presib.hermes.logger
 
 import ch.qos.logback.classic.util.ContextInitializer
 import org.slf4j.Logger
@@ -20,7 +20,7 @@ class NetLogger {
         }
     }
 
-    fun getLogger(name: String): Logger = NetLogger.getLogger(name)
+    fun getLogger(name: String): Logger = Companion.getLogger(name)
 
 
 }
