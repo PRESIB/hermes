@@ -16,7 +16,7 @@ import pt.nfriacowboy.presib.hermes.logger.NetLogger
 import pt.nfriacowboy.presib.hermes.utils.IEnvironment
 
 
-class MQTTService(_environment: IEnvironment, netID: String, receiver: MqttCallback) {
+class MQTTService(_environment: IEnvironment, netID: String, private val receiver: MqttCallback) {
     private val timeout: Long = 5000
     private val environment = _environment
     private val clientId: String = netID
@@ -29,8 +29,6 @@ class MQTTService(_environment: IEnvironment, netID: String, receiver: MqttCallb
 
     private var persistence = MemoryPersistence()
     private lateinit var mqttClient: MqttAsyncClient
-    private val receiver: MqttCallback = receiver
-
 
 
     fun connect() {

@@ -2,7 +2,6 @@ package pt.nfriacowboy.presib.hermes
 
 import pt.nfriacowboy.presib.hermes.logger.NetLogger
 import pt.nfriacowboy.presib.hermes.services.MQTTService
-import de.renew.net.TransitionInstance
 import pt.nfriacowboy.presib.hermes.utils.*
 
 
