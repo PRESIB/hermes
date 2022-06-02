@@ -1,4 +1,4 @@
-package pt.nfriacowboy.presib.hermes.utils
+package pt.nfriacowboy.presib.hermes.communication
 
 import org.eclipse.paho.mqttv5.common.MqttMessage
 import pt.nfriacowboy.presib.hermes.logger.NetLogger

@@ -1,5 +1,6 @@
 package pt.nfriacowboy.presib.hermes
 
+import pt.nfriacowboy.presib.hermes.communication.*
 import pt.nfriacowboy.presib.hermes.logger.NetLogger
 import pt.nfriacowboy.presib.hermes.services.MQTTService
 import pt.nfriacowboy.presib.hermes.utils.*
@@ -11,7 +12,7 @@ class MqttClient(netID: String) : ICommunicationClient {
     var subscriversObservers = mutableMapOf<String, MutableList<(ReceivedMessage) -> Unit>>()
     var topicMessages = mutableMapOf<String, String>()
     val mqttV5Receiver = MqttV5Receiver(subscriversObservers)
-    var environment = SystemEnvironment()
+    var environment = SystemConfig()
     val mqttService: MQTTService = MQTTService(environment, netID, mqttV5Receiver)
     var processor: IMessageProcessor = DefaultMessageProcessor()
 

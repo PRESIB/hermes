@@ -1,4 +1,4 @@
-package pt.nfriacowboy.presib.hermes.utils
+package pt.nfriacowboy.presib.hermes.communication
 
 interface ICommunicationClient {
 

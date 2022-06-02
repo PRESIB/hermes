@@ -1,7 +1,6 @@
 package pt.nfriacowboy.presib.hermes.services
 
 import com.natpryce.konfig.Key
-import com.natpryce.konfig.intType
 import com.natpryce.konfig.stringType
 import org.eclipse.paho.mqttv5.client.IMqttToken
 import org.eclipse.paho.mqttv5.client.MqttAsyncClient
@@ -13,6 +12,7 @@ import org.eclipse.paho.mqttv5.common.MqttMessage
 import org.eclipse.paho.mqttv5.common.MqttSubscription
 import org.slf4j.Logger
 import pt.nfriacowboy.presib.hermes.logger.NetLogger
+import pt.nfriacowboy.presib.hermes.utils.DefaultProperties
 import pt.nfriacowboy.presib.hermes.utils.IEnvironment
 
 
@@ -20,11 +20,10 @@ class MQTTService(_environment: IEnvironment, netID: String, private val receive
     private val timeout: Long = 5000
     private val environment = _environment
     private val clientId: String = netID
-    private val server = Key("mqtt.url", stringType)
-    private val port = Key("mqtt.port", intType)
+
     private val systemTopic = Key("mqtt.systemTopic", stringType)
     private val qos = 2
-    private val broker = environment.config[server] + ":" + environment.config[port]
+    private val broker = environment.config[DefaultProperties.MQTT_SERVER] + ":" + environment.config[DefaultProperties.MQTT_PORT]
     private val logger: Logger = NetLogger.getLogger(netID)
 
     private var persistence = MemoryPersistence()

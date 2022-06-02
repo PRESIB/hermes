@@ -6,7 +6,7 @@ import com.natpryce.konfig.EnvironmentVariables
 import com.natpryce.konfig.overriding
 import java.io.File
 
-class SystemEnvironment(filePath: String = "/presib/hermes/default.properties") : IEnvironment {
+class SystemConfig(filePath: String = "/presib/hermes/default.properties") : IEnvironment {
 
 
     override var config = systemProperties() overriding
@@ -15,3 +15,4 @@ class SystemEnvironment(filePath: String = "/presib/hermes/default.properties") 
 
 
 }
+
