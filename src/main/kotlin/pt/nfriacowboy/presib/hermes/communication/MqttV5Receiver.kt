@@ -6,24 +6,19 @@ import org.eclipse.paho.mqttv5.client.MqttDisconnectResponse
 import org.eclipse.paho.mqttv5.common.MqttException
 import org.eclipse.paho.mqttv5.common.MqttMessage
 import org.eclipse.paho.mqttv5.common.packet.MqttProperties
-import pt.nfriacowboy.presib.hermes.logger.NetLogger
-import java.lang.*
-import java.util.*
 import kotlin.properties.Delegates
 
-class MqttV5Receiver(observers: MutableMap<String, MutableList<(ReceivedMessage) -> Unit>>) : MqttCallback {
-    private val log = NetLogger.getLogger(javaClass)
-
-
-
-    /**
-     * For the in bound message.
-     */
-
+class MqttV5Receiver(private val observers: MutableMap<String, MutableList<(ReceivedMessage) -> Unit>>) : MqttCallback {
+    //private val log = NetLogger.getLogger(javaClass)
 
     var receivedMessages: MutableList<ReceivedMessage> = ArrayList()
 
-    var newestArticleUrl: ReceivedMessage by Delegates.observable(ReceivedMessage("", MqttMessage())) { _, _, newValue ->
+    var newestArticleUrl: ReceivedMessage by Delegates.observable(
+        ReceivedMessage(
+            "",
+            MqttMessage()
+        )
+    ) { _, _, newValue ->
         observers[newValue.topic]?.forEach { it(newValue) }
     }
 

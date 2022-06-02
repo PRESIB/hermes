@@ -19,7 +19,7 @@ class CallMock {
 
     }
 
-    fun startMqqtServer(){
+    fun startMqqtServer() {
         logger.info("send mqtt message")
 
     }

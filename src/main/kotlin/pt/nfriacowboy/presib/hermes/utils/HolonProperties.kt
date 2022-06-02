@@ -4,7 +4,7 @@ import com.natpryce.konfig.Key
 import com.natpryce.konfig.stringType
 
 class HolonProperties {
-    companion object{
+    companion object {
         val HOLON_SERVICES = Key("holon.services", stringType)
     }
 

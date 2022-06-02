@@ -19,22 +19,23 @@ fun main() {
 
     //while (true) { }
 }
-fun stopApplication(){
+
+fun stopApplication() {
     logger.info("I'll be back")
     exitProcess(0)
 }
 
-fun sayHi(value: String){
-    logger.info("say Hi " +value)
+fun sayHi(value: String) {
+    logger.info("say Hi " + value)
     mqttClient.sendMessage("esp32/output", "on")
 }
 
-fun sayHi1(value: String){
-    logger.info("say Hi1 " +value)
+fun sayHi1(value: String) {
+    logger.info("say Hi1 " + value)
 }
 
-fun sayHi2(value: String){
-    logger.info("say Hi2 " +value)
+fun sayHi2(value: String) {
+    logger.info("say Hi2 " + value)
 
     mqttClient.sendMessage("esp32/output", "off")
 }

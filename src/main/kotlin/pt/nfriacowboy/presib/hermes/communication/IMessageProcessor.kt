@@ -4,5 +4,5 @@ import org.eclipse.paho.mqttv5.common.MqttMessage
 
 interface IMessageProcessor {
 
-     fun messageReceived(message:MqttMessage)
+    fun messageReceived(message: MqttMessage)
 }

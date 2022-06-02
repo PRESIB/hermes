@@ -23,7 +23,8 @@ class MQTTService(_environment: IEnvironment, netID: String, private val receive
 
     private val systemTopic = Key("mqtt.systemTopic", stringType)
     private val qos = 2
-    private val broker = environment.config[DefaultProperties.MQTT_SERVER] + ":" + environment.config[DefaultProperties.MQTT_PORT]
+    private val broker =
+        environment.config[DefaultProperties.MQTT_SERVER] + ":" + environment.config[DefaultProperties.MQTT_PORT]
     private val logger: Logger = NetLogger.getLogger(netID)
 
     private var persistence = MemoryPersistence()

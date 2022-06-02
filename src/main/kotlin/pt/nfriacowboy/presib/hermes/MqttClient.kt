@@ -3,7 +3,7 @@ package pt.nfriacowboy.presib.hermes
 import pt.nfriacowboy.presib.hermes.communication.*
 import pt.nfriacowboy.presib.hermes.logger.NetLogger
 import pt.nfriacowboy.presib.hermes.services.MQTTService
-import pt.nfriacowboy.presib.hermes.utils.*
+import pt.nfriacowboy.presib.hermes.utils.SystemConfig
 
 
 class MqttClient(netID: String) : ICommunicationClient {
@@ -37,14 +37,13 @@ class MqttClient(netID: String) : ICommunicationClient {
 
         subscriversObservers.getOrPut(topic, ::mutableListOf).add { result: ReceivedMessage ->
             logger.info(" Simple subscribe transition should be trigger now and process this " + result.message.toString())
-try {
-    logger.info("sending message to processor")
-    this.processor.messageReceived(result.message)
-    logger.info("message sent")
-}catch (error:Exception){
-    logger.error(error.message, error)
-}
-
+            try {
+                logger.info("sending message to processor")
+                this.processor.messageReceived(result.message)
+                logger.info("message sent")
+            } catch (error: Exception) {
+                logger.error(error.message, error)
+            }
 
 
         }
@@ -52,6 +51,7 @@ try {
         mqttService.subscrive(topic)
 
     }
+
     override fun messageProcessor(processor: IMessageProcessor) {
         logger.info("adding processor", processor)
         this.processor = processor

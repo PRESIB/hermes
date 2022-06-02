@@ -5,9 +5,10 @@ import com.natpryce.konfig.EnvironmentVariables
 import com.natpryce.konfig.overriding
 import java.io.File
 
-class HolonConfig(private val holonId:String,
-                  private val systemConfig: SystemConfig
-): IEnvironment {
+class HolonConfig(
+    holonId: String,
+    systemConfig: SystemConfig
+) : IEnvironment {
 
     val propertiesPath = "${systemConfig.config[DefaultProperties.HOLON_DEFAULT_CONFIG_PATH]}$holonId"
 
