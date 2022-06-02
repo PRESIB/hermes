@@ -10,7 +10,7 @@ class HolonConfig(
     systemConfig: SystemConfig
 ) : IEnvironment {
 
-    val propertiesPath = "${systemConfig.config[DefaultProperties.HOLON_DEFAULT_CONFIG_PATH]}$holonId"
+    val propertiesPath = "${systemConfig.config[DefaultProperties.HOLON_DEFAULT_CONFIG_PATH]}$holonId.properties"
 
     override var config = ConfigurationProperties.systemProperties() overriding
             EnvironmentVariables() overriding

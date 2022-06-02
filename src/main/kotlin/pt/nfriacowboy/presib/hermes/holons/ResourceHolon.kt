@@ -3,7 +3,7 @@ package pt.nfriacowboy.presib.hermes.holons
 import pt.nfriacowboy.presib.hermes.utils.DefaultProperties
 import pt.nfriacowboy.presib.hermes.utils.HolonProperties
 
-class ResourceHolon(holonId: String) : PresibHolon(holonId) {
+class ResourceHolon(val holonId: String) : PresibHolon(holonId) {
 
     val services: List<String> = holonConfig.config[HolonProperties.HOLON_SERVICES].split(",")
     val topicNet: String = systemConfig.config[DefaultProperties.HOLON_MQTT_TOPIC_NET]
