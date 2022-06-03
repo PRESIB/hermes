@@ -14,5 +14,8 @@ class DefaultProperties {
         val HOLON_MQTT_TOPIC_DEVICE = Key("holon.mqtt.device", stringType)
         val HOLON_MQTT_TOPIC_NET = Key("holon.mqtt.net", stringType)
 
+        val SYSTEM_TO_WAREHOUSE_TRANSPORTATION_SERVICE = Key("system.transport.to.warehouse.service", stringType)
+        val SYSTEM_TRANSPORTATION_SERVICE = Key("system.transport.service", stringType)
+
     }
 }
