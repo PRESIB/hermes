@@ -14,7 +14,7 @@ class ProductHolon(holonId: String) : PresibHolon(holonId) {
     fun nextService() {
         if (loadExecutionPlan) {
             loadExecutionPlan = false
-            executionPlan = services().toMutableList()
+            executionPlan = services().split(",").toMutableList()
         }
         if (executionPlan.isNotEmpty()) {
             serviceInExecution = executionPlan.removeFirst()
