@@ -14,7 +14,7 @@ abstract class PresibHolon(val holonId: String) {
     fun services() = holonConfig.config[HolonProperties.HOLON_SERVICES]
 
     fun toWarehouseService() = systemConfig.config[DefaultProperties.SYSTEM_TO_WAREHOUSE_TRANSPORTATION_SERVICE]
-    open fun transportService() = systemConfig.config[DefaultProperties.SYSTEM_TO_WAREHOUSE_TRANSPORTATION_SERVICE]
+    open fun transportService() = systemConfig.config[DefaultProperties.SYSTEM_TRANSPORTATION_SERVICE]
     fun currentId() = holonId
 
 
